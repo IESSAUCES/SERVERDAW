@@ -95,25 +95,3 @@ while [ $CURSO -lt 3 ]; do
 
 	done
 
-done
-# chgrp "www-data" "$DIR_APACHE$USUARIO/public_html/index.html"
-# chown "$USUARIO"  "$DIR_APACHE$USUARIO/public_html/index.html"
-
-#Vamos con apache
-#Creamos el sitio 
-# printf  "%s\n"\
-#        "<VirtualHost *:80>"\
-#        "       ServerName $USUARIO.$DOMINIO"\
-#        "       ServerAdmin webmaster@localhost"\
-#        "       DocumentRoot $DIR_APACHE$USUARIO/www/"\
-#        "       DirectoryIndex index.htm index.html index.php index.jsp"\
-#        "</VirtualHost>"\
-# 	>/etc/apache2/sites-available/"$USUARIO".conf
-
-#Habilitamos el sitio
-# a2ensite "$USUARIO.conf"
-
-#Reiniciamos apache
-# /etc/init.d/apache2 restart
-
-# echo "Sitio creado para el dominio http://$USUARIO.$DOMINIO"
