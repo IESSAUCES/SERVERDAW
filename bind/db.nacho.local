@@ -1,0 +1,24 @@
+; BIND data for nacho.local
+;
+$TTL	604800
+@	IN	SOA	nplnacho.local. root.localhost. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			   3600 )	; Negative cache TTL
+;
+@		IN NS	npl.nacho.local.
+; Registros Host
+@		IN A	192.168.1.155
+npl		IN A	192.168.1.155
+
+; Registros Alias
+daw201		IN CNAME	npl.nacho.local.
+daw202		IN CNAME	npl.nacho.local.
+daw203		IN CNAME	npl.nacho.local.
+daw204		IN CNAME	npl.nacho.local.
+www.daw201	IN CNAME	npl.nacho.local.
+www.daw202	IN CNAME	npl.nacho.local.
+www.daw203	IN CNAME	npl.nacho.local.
+www.daw204	IN CNAME	npl.nacho.local.
