@@ -1,0 +1,26 @@
+;
+; BIND data for soniaall.local
+;
+$TTL	604800
+@	IN	SOA	salused.soniaall.local. root.localhost. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	salused.soniaall.local.
+@	IN	A	192.168.3.209
+salused	IN	A	192.168.3.209
+
+
+; Registros Alias
+daw201	IN	CNAME	salused.soniaall.local.
+daw202	IN	CNAME	salused.soniaall.local.
+daw203	IN	CNAME	salused.soniaall.local.
+daw204	IN	CNAME	salused.soniaall.local.
+
+www.daw201	IN	CNAME	salused.soniaall.local.
+www.daw202	IN	CNAME	salused.soniaall.local.
+www.daw203	IN	CNAME	salused.soniaall.local.
+www.daw204	IN	CNAME	salused.soniaall.local.
