@@ -1,0 +1,27 @@
+;
+; BIND data for raul.local
+;
+$TTL	604800
+@	IN	SOA	rnsused.raul.local. root.localhost. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 3600 )		; Negative Cache TTL
+;
+@	IN	NS	rnsused.raul.local.
+; Registros Host
+@	IN	A	192.168.3.203
+rnsused	IN	A	192.168.3.203
+
+; Registros Alias
+
+daw201	IN	CNAME	rnsused.raul.local.
+daw202	IN	CNAME	rnsused.raul.local.
+daw203	IN	CNAME	rnsused.raul.local.
+daw204	IN	CNAME	rnsused.raul.local.
+
+www.daw201	IN	CNAME	rnsused.raul.local.
+www.daw202	IN	CNAME	rnsused.raul.local.
+www.daw203	IN	CNAME	rnsused.raul.local.
+www.daw204	IN	CNAME	rnsused.raul.local.
