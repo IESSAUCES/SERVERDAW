@@ -63,16 +63,16 @@ while [ $CURSO -lt 3 ]; do
 			fi
 
 #Deshabilitamos el sitio en apache
-#a2dissite "$USUARIO.conf"
+a2dissite "$USUARIO.conf"
 
 #Eliminamos la configuracion del sitio 
-#rm /etc/apache2/sites-available/"$USUARIO".conf
+rm /etc/apache2/sites-available/"$USUARIO".conf
 
 
 	echo "Usuario $USUARIO eliminado correctamente!"
 done
 done
-
+/etc/init.d/apache2 restart
 
 
 
