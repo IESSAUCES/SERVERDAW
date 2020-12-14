@@ -1,0 +1,20 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	rnsexus.rns.local. root.localhost. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 3600 )		; Negative Cache TTL
+;
+@	IN	NS	rnsexus.rns.local.
+;Registros Host
+rns.local.	IN	A	192.168.3.103
+rnsexus.rns.local.	IN	A	192.168.3.103
+
+; Registros Alias
+
+sitio1.rns.local.	IN	CNAME	rnsexus.rns.local.
+sitio2.rns.local.	IN	CNAME	rnsexus.rns.local.
