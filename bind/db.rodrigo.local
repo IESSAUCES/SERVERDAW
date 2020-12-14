@@ -1,25 +1,18 @@
-;BIND data for rodrigo.local
+;BIND data for rrm.local
 ;          
 $TTL 604800
-@ IN SOA rrmused.rodrigo.local. root.localhost. (
+@ IN SOA rrme18us.rrm.local. root.localhost. (
                 1    ; Serial
                 604800     ; Refresh
                 86400      ; Retry
                 2419200    ; Expire
                 3600 )     ; Negative cache TTL
 ;
-@               IN NS rrmused.rodrigo.local.
+@               IN NS rrme18us.rrm.local.
 ; Registros Host
-@               IN A   192.168.3.218
-rrmused         IN A   192.168.3.218
+@               IN A   192.168.3.118
+rrme18us         IN A   192.168.3.118
 
 ; Registros Alias
-daw201          IN CNAME   rrmused.rodrigo.local.
-daw202          IN CNAME   rrmused.rodrigo.local. 
-daw203          IN CNAME   rrmused.rodrigo.local. 
-daw204          IN CNAME   rrmused.rodrigo.local.
-
-www.daw201          IN CNAME   rrmused.rodrigo.local.
-www.daw202          IN CNAME   rrmused.rodrigo.local. 
-www.daw203          IN CNAME   rrmused.rodrigo.local. 
-www.daw204          IN CNAME   rrmused.rodrigo.local.
+sitio1.rrm.local          IN CNAME   rrme18us.rrm.local.
+sitio2.rrm.local          IN CNAME   rrme18us.rrm.local. 

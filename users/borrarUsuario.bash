@@ -9,8 +9,8 @@ fi
     #GRUPO_SFTP sera el grupo deberemos tener creado
 DIR_APACHE="/var/www/"
 GRUPO_SFTP="ftpusers"
-DOMINIO="rodrigo.local"
-SUFIJO_USUARIO="DAW"
+DOMINIO="rrm.local"
+SUFIJO_USUARIO="sitio"
 
 
 #Comprobamos que el directorio de usuarios existe
