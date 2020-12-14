@@ -1,0 +1,22 @@
+;
+; BIND data file for naj.local
+;
+$TTL	604800
+@	IN	SOA	najexus.naj.local. root.localhost. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	najexus.naj.local.
+;Registros Host
+@	IN	A	192.168.3.112
+najexus IN	A	192.168.3.112
+
+;Registros Alias
+sitio1	IN	CNAME	najexus.naj.local.
+sitio2	IN	CNAME	najexus.naj.local.	
+
+www.sitio1.naj.local.	IN	CNAME	najexus.naj.local.
+www.sitio2.naj.local.	IN	CNAME	najexus.naj.local.
