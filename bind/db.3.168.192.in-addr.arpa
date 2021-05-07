@@ -1,0 +1,14 @@
+;
+; BIND data file for 0.168.192.in-addr.arpa
+;
+$TTL	604800
+@	IN	SOA	cml-used.cristina.local.  cristina.gmail.com. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@		IN	NS	cml-used.cristina.local.
+207		IN	PTR 	cml-used.cristina.local.
+207             IN      PTR     cristina.local.
