@@ -1,0 +1,17 @@
+;
+; BIND data file for cristina.local
+;
+$TTL	604800
+@	IN	SOA	cml-used.cristina.local.  cristina.gmail.com. (
+			      2		; Serial
+			 604800		; 7 dias Refresh
+			  86400		; 24 horas Retry
+			2419200		; 28 dias Expire
+			 3600 	)	; Negative Cache TTL
+;
+@		IN	NS	cml-used.cristina.local.
+@		IN	A	192.168.3.207
+cml-used	IN	A 	192.168.3.207
+daw201		IN	CNAME	cml.used.cristina.local.
+www.daw201		IN	CNAME	cml-used.cristina.local.
+
