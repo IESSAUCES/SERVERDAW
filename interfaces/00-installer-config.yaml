@@ -1,0 +1,13 @@
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    enp0s3:
+      addresses:
+      - 192.168.3.207/24
+      gateway4: 192.168.3.1
+      nameservers:
+        addresses:
+        - 192.168.3.207
+        search:
+        - cristina.local
+  version: 2
