@@ -11,9 +11,9 @@ fi
 # GRUPO_SFTP sera el grupo deberemos tener creado
 
 DIR_APACHE="/var/www/"
-GRUPO_SFTP="sftpusers"
-DOMINIO="sauces.local"
-SUFIJO_USUARIO="DAW"
+GRUPO_SFTP="ftpusers"
+DOMINIO="cristina.local"
+SUFIJO_USUARIO="daw"
 
 
 # Comprobamos que el grupo de usuarios existe
@@ -47,8 +47,8 @@ while [ $CURSO -lt 3 ]; do
 	VALOR_INICIAL=101
 	VALOR_FINAL=117
 	else
-	VALOR_INICIAL=201
-	VALOR_FINAL=217
+	VALOR_INICIAL=203
+	VALOR_FINAL=210
 	fi
 	let CURSO+=1
 	echo "VALOR INICIAL $VALOR_INICIAL"
@@ -59,7 +59,7 @@ while [ $CURSO -lt 3 ]; do
 		echo $USUARIO;
 		PASSWORD="paso"
 		#Creamos el usuario 
-		useradd -G "$GRUPO_SFTP" -m -d  "$DIR_APACHE$USUARIO" -g www-data -p "paso" -s /bin/false "$USUARIO" 
+		useradd -G "$GRUPO_SFTP" -m -d  "$DIR_APACHE$USUARIO" -g www-data -p "paso" "$USUARIO" 
 		if [ $? -eq 0 ]
 		then
 			echo "Usuario creado correctamente $USUARIO"
@@ -93,27 +93,28 @@ while [ $CURSO -lt 3 ]; do
 	chgrp  -R "www-data" "$DIR_APACHE$USUARIO/public_html"
 	chown -R "$USUARIO"  "$DIR_APACHE$USUARIO/public_html/index.html"
 
-	done
+	
 
-done
+
 # chgrp "www-data" "$DIR_APACHE$USUARIO/public_html/index.html"
 # chown "$USUARIO"  "$DIR_APACHE$USUARIO/public_html/index.html"
 
 #Vamos con apache
 #Creamos el sitio 
-# printf  "%s\n"\
-#        "<VirtualHost *:80>"\
-#        "       ServerName $USUARIO.$DOMINIO"\
-#        "       ServerAdmin webmaster@localhost"\
-#        "       DocumentRoot $DIR_APACHE$USUARIO/www/"\
-#        "       DirectoryIndex index.htm index.html index.php index.jsp"\
-#        "</VirtualHost>"\
-# 	>/etc/apache2/sites-available/"$USUARIO".conf
+ printf  "%s\n"\
+        "<VirtualHost *:80>"\
+        "       ServerName $USUARIO.$DOMINIO"\
+        "       ServerAdmin webmaster@localhost"\
+        "       DocumentRoot $DIR_APACHE$USUARIO/public_html/"\
+        "       DirectoryIndex index.htm index.html index.php index.jsp"\
+        "</VirtualHost>"\
+ 	>/etc/apache2/sites-available/"$USUARIO".conf
 
 #Habilitamos el sitio
-# a2ensite "$USUARIO.conf"
-
+ a2ensite "$USUARIO.conf"
+done
+done
 #Reiniciamos apache
-# /etc/init.d/apache2 restart
+ /etc/init.d/apache2 restart
 
-# echo "Sitio creado para el dominio http://$USUARIO.$DOMINIO"
+ echo "Sitio creado para el dominio http://$USUARIO.$DOMINIO"

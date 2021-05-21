@@ -8,9 +8,9 @@ fi
     #DIR_APACHE es el directorio donde estaran todos los home de los usuarios
     #GRUPO_SFTP sera el grupo deberemos tener creado
 DIR_APACHE="/var/www/"
-GRUPO_SFTP="sftpusers"
-DOMINIO="sauces.local"
-SUFIJO_USUARIO="DAW"
+GRUPO_SFTP="ftpusers"
+DOMINIO="cristina.local"
+SUFIJO_USUARIO="daw"
 
 
 #Comprobamos que el directorio de usuarios existe
@@ -33,8 +33,8 @@ while [ $CURSO -lt 3 ]; do
 	VALOR_INICIAL=101
 	VALOR_FINAL=117
 	else
-	VALOR_INICIAL=201
-	VALOR_FINAL=217
+	VALOR_INICIAL=203
+	VALOR_FINAL=210
 	fi
 	let CURSO+=1
 	echo "VALOR INICIAL $VALOR_INICIAL"
@@ -63,16 +63,16 @@ while [ $CURSO -lt 3 ]; do
 			fi
 
 #Deshabilitamos el sitio en apache
-#a2dissite "$USUARIO.conf"
+a2dissite "$USUARIO.conf"
 
 #Eliminamos la configuracion del sitio 
-#rm /etc/apache2/sites-available/"$USUARIO".conf
+rm /etc/apache2/sites-available/"$USUARIO".conf
 
 
 	echo "Usuario $USUARIO eliminado correctamente!"
 done
 done
-
+/etc/init.d/apache2 restart
 
 
 
